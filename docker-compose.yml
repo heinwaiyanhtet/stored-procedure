@@ -1,7 +1,9 @@
 version: '3.8'
 services:
   mysql:
-    image: mysql:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
     environment:
       MYSQL_ROOT_PASSWORD: store_Procedure@123
       MYSQL_DATABASE: store-procedure
