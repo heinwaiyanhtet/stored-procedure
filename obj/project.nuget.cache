@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "8y8Bpx9AngmNj0vHtl2KcQ98yVJtk4zinm1g9S9NKE9m22UFL80jt5H703iFDlQh0sU6cwEAvxSMWA2eSvbw+Q==",
+  "dgSpecHash": "asD0uLySWDYStRa0uoxtS6kPtWzj3au4djHkWPKXCxxZkcEebZx8SNP9QG/X0ZJDz6vGX35scyH58lB2iiL1fw==",
   "success": true,
   "projectFilePath": "/home/hein/Desktop/store-procedure/store-procedure.csproj",
   "expectedPackageFiles": [
@@ -34,7 +34,6 @@
     "/home/hein/.nuget/packages/microsoft.win32.systemevents/4.7.0/microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "/home/hein/.nuget/packages/mysql.data/8.3.0/mysql.data.8.3.0.nupkg.sha512",
     "/home/hein/.nuget/packages/mysql.entityframeworkcore/8.0.0/mysql.entityframeworkcore.8.0.0.nupkg.sha512",
-    "/home/hein/.nuget/packages/refit/7.0.0/refit.7.0.0.nupkg.sha512",
     "/home/hein/.nuget/packages/runtime.native.system.data.sqlclient.sni/4.7.0/runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",
     "/home/hein/.nuget/packages/runtime.win-arm64.runtime.native.system.data.sqlclient.sni/4.4.0/runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "/home/hein/.nuget/packages/runtime.win-x64.runtime.native.system.data.sqlclient.sni/4.4.0/runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
@@ -53,7 +52,6 @@
     "/home/hein/.nuget/packages/system.drawing.common/4.7.0/system.drawing.common.4.7.0.nupkg.sha512",
     "/home/hein/.nuget/packages/system.io/4.3.0/system.io.4.3.0.nupkg.sha512",
     "/home/hein/.nuget/packages/system.io.pipelines/6.0.3/system.io.pipelines.6.0.3.nupkg.sha512",
-    "/home/hein/.nuget/packages/system.net.http.json/7.0.1/system.net.http.json.7.0.1.nupkg.sha512",
     "/home/hein/.nuget/packages/system.reflection/4.3.0/system.reflection.4.3.0.nupkg.sha512",
     "/home/hein/.nuget/packages/system.reflection.primitives/4.3.0/system.reflection.primitives.4.3.0.nupkg.sha512",
     "/home/hein/.nuget/packages/system.runtime/4.3.0/system.runtime.4.3.0.nupkg.sha512",
@@ -66,7 +64,7 @@
     "/home/hein/.nuget/packages/system.text.encoding/4.3.0/system.text.encoding.4.3.0.nupkg.sha512",
     "/home/hein/.nuget/packages/system.text.encoding.codepages/4.4.0/system.text.encoding.codepages.4.4.0.nupkg.sha512",
     "/home/hein/.nuget/packages/system.text.encodings.web/7.0.0/system.text.encodings.web.7.0.0.nupkg.sha512",
-    "/home/hein/.nuget/packages/system.text.json/7.0.3/system.text.json.7.0.3.nupkg.sha512",
+    "/home/hein/.nuget/packages/system.text.json/7.0.1/system.text.json.7.0.1.nupkg.sha512",
     "/home/hein/.nuget/packages/system.threading.tasks/4.3.0/system.threading.tasks.4.3.0.nupkg.sha512",
     "/home/hein/.nuget/packages/system.threading.tasks.extensions/4.5.4/system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "/home/hein/.nuget/packages/system.windows.extensions/4.7.0/system.windows.extensions.4.7.0.nupkg.sha512",
