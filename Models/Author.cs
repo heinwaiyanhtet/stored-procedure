@@ -9,7 +9,7 @@ namespace store_procedure.Models
         {
             Books = new HashSet<Book>();
         }
-
+        
         public int Id { get; set; }
         public string AuthorName { get; set; } = null!;
         public DateTime? BirthdayName { get; set; }
