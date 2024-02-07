@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "asD0uLySWDYStRa0uoxtS6kPtWzj3au4djHkWPKXCxxZkcEebZx8SNP9QG/X0ZJDz6vGX35scyH58lB2iiL1fw==",
+  "dgSpecHash": "XTACd011qkrRPXUFRFRht4Hzzx9xb8pgOsB9zwy6eeNVsETgbTHd0KxSpGTMp22571huYUJOUsHYgrZg4/dGEw==",
   "success": true,
   "projectFilePath": "/home/hein/Desktop/store-procedure/store-procedure.csproj",
   "expectedPackageFiles": [
     "/home/hein/.nuget/packages/bouncycastle.cryptography/2.2.1/bouncycastle.cryptography.2.2.1.nupkg.sha512",
+    "/home/hein/.nuget/packages/dapper/2.1.28/dapper.2.1.28.nupkg.sha512",
     "/home/hein/.nuget/packages/entityframework/6.4.4/entityframework.6.4.4.nupkg.sha512",
     "/home/hein/.nuget/packages/google.protobuf/3.25.1/google.protobuf.3.25.1.nupkg.sha512",
     "/home/hein/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
