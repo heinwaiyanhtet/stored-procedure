@@ -25,10 +25,9 @@ public class AuthorController : ControllerBase
     {
 
         // var data = new List<Author>();
-       var authorsSP = await GetDataTableFromSP("GetAuthors");
-        var jsonAuthors = JsonConvert.SerializeObject(authorsSP, Formatting.None);
+        var authorsSP = await GetDataTableFromSP("GetAuthors");
+        string jsonAuthors = JsonConvert.SerializeObject(authorsSP, Formatting.None);
         return Content(jsonAuthors, "application/json");
-
 
     }
 
