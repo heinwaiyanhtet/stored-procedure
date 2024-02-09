@@ -1,5 +1,6 @@
 
 using Microsoft.EntityFrameworkCore;
+using store_procedure.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,7 +12,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-builder.Services.AddDbContext<DbContext>
+builder.Services.AddDbContext<storeprocedureContext>
 (
        options => options.UseMySQL(connectionString)
 );
@@ -31,5 +32,6 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
 
 app.Run();

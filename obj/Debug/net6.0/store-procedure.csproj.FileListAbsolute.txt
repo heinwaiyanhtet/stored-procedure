@@ -70,3 +70,5 @@
 /home/hein/Desktop/store-procedure/obj/Debug/net6.0/store-procedure.genruntimeconfig.cache
 /home/hein/Desktop/store-procedure/bin/Debug/net6.0/Humanizer.dll
 /home/hein/Desktop/store-procedure/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Design.dll
+/home/hein/Desktop/store-procedure/bin/Debug/net6.0/Dapper.dll
+/home/hein/Desktop/store-procedure/bin/Debug/net6.0/Newtonsoft.Json.dll
