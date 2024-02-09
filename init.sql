@@ -50,3 +50,51 @@ CREATE TABLE book_genres (
     FOREIGN KEY (book_id) REFERENCES books(id),
     FOREIGN KEY (genre_id) REFERENCES genres(id)
 );
+
+
+CREATE PROCEDURE GetAuthors
+AS
+BEGIN
+    SELECT *
+    FROM authors;
+END;
+
+
+CREATE PROCEDURE GetBooks
+AS 
+BEGIN 
+    SELECT *
+    FROM books
+END;
+
+CREATE PROCEDURE GetReaders
+AS
+BEGIN
+    SELECT * 
+    FROM readers
+END;
+
+
+CREATE PROCEDURE Getborrowings
+AS
+BEGIN
+    SELECT *
+    FROM borrowings
+END;
+
+
+CREATE PROCEDURE Getgenres
+AS
+BEGIN
+    SELECT *
+    FROM genres
+END;
+
+CREATE PROCEDURE GetBookGenres
+AS
+    SELECT *
+    FROM book_genres
+END;
+
+
+
