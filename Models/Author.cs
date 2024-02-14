@@ -16,6 +16,6 @@ namespace store_procedure.Models
         public string? Bio { get; set; }
         public DateTime? CreatedAt { get; set; }
         public DateTime? UpdatedAt { get; set; }
-        public virtual ICollection<Book> Books { get; set; }
+        public virtual ICollection<Book>? Books { get; set; } =null;
     }
 }

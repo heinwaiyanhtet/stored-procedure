@@ -27,7 +27,7 @@ namespace store_procedure.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseMySQL("Server=127.0.0.1;Port=3307;Database=store-procedure;User=hein;Password=hein@123;");
+                optionsBuilder.UseMySQL("Server=127.0.0.1;Port=3307;Database=store-procedure;User=root;Password=store_Procedure@123;");
             }
         }
 

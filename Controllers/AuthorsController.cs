@@ -2,6 +2,7 @@ using System.Data;
 using System.Data.SqlClient;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using MySql.Data.MySqlClient;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using store_procedure.Models;
@@ -23,37 +24,72 @@ public class AuthorController : ControllerBase
     [HttpGet]
     public async Task<IActionResult> Get()
     {
-
-        // var data = new List<Author>();
         var authorsSP = await GetDataTableFromSP("GetAuthors");
-        string jsonAuthors = JsonConvert.SerializeObject(authorsSP, Formatting.None);
+        string jsonAuthors = JsonConvert.SerializeObject(authorsSP);
         return Content(jsonAuthors, "application/json");
-
     }
 
-    private async Task<DataTable> GetDataTableFromSP
-        (
-        string storedProcedure
-        // ,List<SqlParameter> sqlParameters
-        )
+
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetById(int id)
     {
-            using (var command = _applicationDbContext.Database.GetDbConnection().CreateCommand())
-            {
-                command.CommandType = CommandType.StoredProcedure;
-                command.CommandText = storedProcedure;
+        
+        var sqlParameters = new List<MySqlParameter>()
+        {
+            new MySqlParameter("@authorId", id),
+        };
 
-                // command.Parameters.AddRange(sqlParameters.ToArray());
-                await _applicationDbContext.Database.OpenConnectionAsync();
+        var data = new List<Author>();
+        var departmentsSP = await GetDataTableFromSP("GetAuthorById", sqlParameters);
+         var authorDto = MapToAuthorDto(departmentsSP);
 
-                using (var result = command.ExecuteReader())
-                {
-                    var dataTable = new DataTable();
-                    dataTable.Load(result);
-                    await _applicationDbContext.Database.CloseConnectionAsync();
-                    return dataTable;
-                }
-            }
+        return Ok(authorDto);
+
     }
+
+
+    private Author MapToAuthorDto(DataTable dataTable)
+    {
+        var firstRow = dataTable.Rows.Cast<DataRow>().FirstOrDefault();
+        if (firstRow != null)
+        {
+            return new Author
+            {
+                Id = Convert.ToInt32(firstRow["Id"]),
+                AuthorName = Convert.ToString(firstRow["AuthorName"]),
+                BirthdayName = Convert.ToDateTime(firstRow["BirthdayName"]),
+                Bio = Convert.ToString(firstRow["Bio"]),
+                CreatedAt = Convert.ToDateTime(firstRow["CreatedAt"]),
+                UpdatedAt = Convert.ToDateTime(firstRow["UpdatedAt"])
+            };
+        }
+        return null;
+    }
+
+    private async Task<DataTable> GetDataTableFromSP(string storedProcedure, List<MySqlParameter>? sqlParameters = null)
+{
+    using (var command = _applicationDbContext.Database.GetDbConnection().CreateCommand())
+    {
+        command.CommandType = CommandType.StoredProcedure;
+        command.CommandText = storedProcedure;
+
+        if (sqlParameters?.Count > 0)
+        {
+            command.Parameters.AddRange(sqlParameters.ToArray());
+        }
+
+        await _applicationDbContext.Database.OpenConnectionAsync();
+
+        using (var result = await command.ExecuteReaderAsync())
+        {
+            var dataTable = new DataTable();
+            dataTable.Load(result);
+            await _applicationDbContext.Database.CloseConnectionAsync();
+            return dataTable;
+        }
+    }
+}
+
 
 
 

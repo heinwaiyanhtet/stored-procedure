@@ -52,49 +52,36 @@ CREATE TABLE book_genres (
 );
 
 
-CREATE PROCEDURE GetAuthors
-AS
+INSERT INTO `authors` 
+(`id`, `authorName`, `birthdayName`, `bio`, `createdAt`, `updatedAt`) VALUES (1, 'hein wai yan htet', '2017-06-15', 'hell bio', '2017-06-15 00:00:00', '2017-06-15 00:00:00');
+
+
+DELIMITER //
+CREATE PROCEDURE GetAuthors()
 BEGIN
-    SELECT *
-    FROM authors;
-END;
+    SELECT * FROM authors;
+END //
+DELIMITER ;
 
 
-CREATE PROCEDURE GetBooks
-AS 
-BEGIN 
-    SELECT *
-    FROM books
-END;
 
-CREATE PROCEDURE GetReaders
-AS
+DELIMITER //
+CREATE PROCEDURE GetAuthorById(IN authorId INT)
 BEGIN
-    SELECT * 
-    FROM readers
-END;
+    SELECT * FROM authors WHERE id = authorId;
+END //
+DELIMITER ;
 
 
-CREATE PROCEDURE Getborrowings
-AS
-BEGIN
-    SELECT *
-    FROM borrowings
-END;
 
 
-CREATE PROCEDURE Getgenres
-AS
-BEGIN
-    SELECT *
-    FROM genres
-END;
 
-CREATE PROCEDURE GetBookGenres
-AS
-    SELECT *
-    FROM book_genres
-END;
+
+
+
+
+
+
 
 
 
