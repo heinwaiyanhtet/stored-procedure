@@ -13,12 +13,12 @@ namespace store_procedure.Controllers;
 public class AuthorController : ControllerBase
 {
         public readonly ILogger<AuthorController> _logger;
-        private readonly storeprocedureContext _applicationDbContext;
+        private readonly storeprocedureContext _db;
 
         public AuthorController(ILogger<AuthorController> logger,storeprocedureContext applicationDbContext)
         {
             _logger = logger;
-            _applicationDbContext = applicationDbContext;
+            _db = applicationDbContext;
         }
 
         [HttpGet]
@@ -105,7 +105,46 @@ public class AuthorController : ControllerBase
             // return Ok(authorDto);
         }
 
-        
+
+        [HttpPatch("{id}")]
+        public async Task<IActionResult> Patch(Author author)
+        {
+            var getCurrentAuthor = _db.Authors.FirstOrDefault(a => a.Id == author.Id);
+
+            if(getCurrentAuthor != null)
+            {
+                string? authorName = author.AuthorName ?? getCurrentAuthor.AuthorName;
+                DateTime? BirthdayName = author.BirthdayName ?? author.BirthdayName;
+                string? Bio = author.Bio ?? author.Bio;
+                DateTime? CreatedAt = author.CreatedAt ?? author.CreatedAt;
+                DateTime? UpdatedAt = author.UpdatedAt ?? author.UpdatedAt;
+                
+
+                var sqlParameters = new List<MySqlParameter>()
+                {
+                    new MySqlParameter("@p_Id", author.Id),
+
+                    new MySqlParameter("@p_authorName", authorName),
+                    new MySqlParameter("@p_birthdayName", author.BirthdayName),
+                    new MySqlParameter("@p_bio", Bio),
+                    new MySqlParameter("@p_created_at", CreatedAt),
+                    new MySqlParameter("@p_updated_at", UpdatedAt),
+                    new MySqlParameter("@p_statementType", "UPDATE"),
+                };
+
+                //   var data = new List<Author>();
+                var departmentsSP = await GetDataTableFromSP("AUTHORCRUD", sqlParameters);
+                // var authorDto = MapToAuthorDto(departmentsSP);
+                return Ok();
+            }
+
+            return BadRequest("id not foud!");
+            
+            
+            
+        }
+
+
 
 
         private Author MapToAuthorDto(DataTable dataTable)
@@ -128,7 +167,7 @@ public class AuthorController : ControllerBase
 
         private async Task<DataTable> GetDataTableFromSP(string storedProcedure, List<MySqlParameter>? sqlParameters = null)
         {
-            using (var command = _applicationDbContext.Database.GetDbConnection().CreateCommand())
+            using (var command = _db.Database.GetDbConnection().CreateCommand())
             {
                 command.CommandType = CommandType.StoredProcedure;
                 command.CommandText = storedProcedure;
@@ -138,13 +177,13 @@ public class AuthorController : ControllerBase
                     command.Parameters.AddRange(sqlParameters.ToArray());
                 }
 
-                await _applicationDbContext.Database.OpenConnectionAsync();
+                await _db.Database.OpenConnectionAsync();
 
                 using (var result = await command.ExecuteReaderAsync())
                 {
                     var dataTable = new DataTable();
                     dataTable.Load(result);
-                    await _applicationDbContext.Database.CloseConnectionAsync();
+                    await _db.Database.CloseConnectionAsync();
                     return dataTable;
                 }
             }
