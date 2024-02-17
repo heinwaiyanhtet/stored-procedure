@@ -29,7 +29,6 @@ public class AuthorController : ControllerBase
         return Content(jsonAuthors, "application/json");
     }
 
-
     [HttpGet("{id}")]
     public async Task<IActionResult> GetById(int id)
     {
@@ -41,12 +40,13 @@ public class AuthorController : ControllerBase
 
         var data = new List<Author>();
         var departmentsSP = await GetDataTableFromSP("GetAuthorById", sqlParameters);
-         var authorDto = MapToAuthorDto(departmentsSP);
+        var authorDto = MapToAuthorDto(departmentsSP);
 
         return Ok(authorDto);
-
     }
 
+    
+    
 
     private Author MapToAuthorDto(DataTable dataTable)
     {
@@ -67,29 +67,28 @@ public class AuthorController : ControllerBase
     }
 
     private async Task<DataTable> GetDataTableFromSP(string storedProcedure, List<MySqlParameter>? sqlParameters = null)
-{
-    using (var command = _applicationDbContext.Database.GetDbConnection().CreateCommand())
     {
-        command.CommandType = CommandType.StoredProcedure;
-        command.CommandText = storedProcedure;
-
-        if (sqlParameters?.Count > 0)
+        using (var command = _applicationDbContext.Database.GetDbConnection().CreateCommand())
         {
-            command.Parameters.AddRange(sqlParameters.ToArray());
+            command.CommandType = CommandType.StoredProcedure;
+            command.CommandText = storedProcedure;
+
+            if (sqlParameters?.Count > 0)
+            {
+                command.Parameters.AddRange(sqlParameters.ToArray());
+            }
+
+            await _applicationDbContext.Database.OpenConnectionAsync();
+
+            using (var result = await command.ExecuteReaderAsync())
+            {
+                var dataTable = new DataTable();
+                dataTable.Load(result);
+                await _applicationDbContext.Database.CloseConnectionAsync();
+                return dataTable;
+            }
         }
-
-        await _applicationDbContext.Database.OpenConnectionAsync();
-
-        using (var result = await command.ExecuteReaderAsync())
-        {
-            var dataTable = new DataTable();
-            dataTable.Load(result);
-            await _applicationDbContext.Database.CloseConnectionAsync();
-            return dataTable;
-        }
-    }
-}
-
+    } 
 
 
 

@@ -73,6 +73,46 @@ END //
 DELIMITER ;
 
 
+DELIMITER //
+
+CREATE PROCEDURE AUTHORCRUD(
+    IN p_Id INT,
+    IN p_authorName varchar(255),
+    In p_birthdayName DATE,
+    In p_bio varchar(255),
+    In p_created_at DATE,
+    IN p_updated_at DATE,
+    IN p_statementType VARCHAR(20)
+)
+BEGIN
+    IF p_statementType = 'Insert' THEN
+        INSERT INTO authors(Id, authorName, birthdayName, bio, created_at, updated_at)
+        VALUES (p_Id, p_authorName, p_birthdayName, p_bio, p_created_at, p_updated_at);
+        
+    ELSEIF p_statementType = 'SELECT' THEN
+        SELECT * FROM authors;
+
+    ELSEIF p_statementType = 'UPDATE' THEN
+        UPDATE authors
+        SET
+            authorName = p_authorName,
+            birthdayName = p_birthdayName,
+            bio = p_bio,
+            created_at = p_created_at,
+            updated_at = p_updated_at
+        WHERE Id = p_Id;
+
+    ELSEIF p_statementType = 'DELETE' THEN
+        DELETE FROM authors WHERE Id = p_Id;
+    
+     ELSEIF p_statementType = 'GETBYID' THEN
+        SELECT * FROM authors WHERE Id = p_Id;
+
+    END IF;
+END //
+
+DELIMITER ;
+
 
 
 
