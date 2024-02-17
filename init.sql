@@ -86,7 +86,7 @@ CREATE PROCEDURE AUTHORCRUD(
 )
 BEGIN
     IF p_statementType = 'Insert' THEN
-        INSERT INTO authors(Id, authorName, birthdayName, bio, created_at, updated_at)
+        INSERT INTO authors(Id, AuthorName, BirthdayName, Bio, CreatedAt, UpdatedAt)
         VALUES (p_Id, p_authorName, p_birthdayName, p_bio, p_created_at, p_updated_at);
         
     ELSEIF p_statementType = 'SELECT' THEN
@@ -95,11 +95,11 @@ BEGIN
     ELSEIF p_statementType = 'UPDATE' THEN
         UPDATE authors
         SET
-            authorName = p_authorName,
-            birthdayName = p_birthdayName,
-            bio = p_bio,
-            created_at = p_created_at,
-            updated_at = p_updated_at
+            AuthorName = p_authorName,
+            BirthdayName = p_birthdayName,
+            Bio = p_bio,
+            CreatedAt = p_created_at,
+            UpdatedAt = p_updated_at
         WHERE Id = p_Id;
 
     ELSEIF p_statementType = 'DELETE' THEN
