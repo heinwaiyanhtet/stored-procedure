@@ -80,13 +80,11 @@ public class AuthorController : ControllerBase
                     return this;
                 }
            
-                 public List<MySqlParameter> Build()
+                public List<MySqlParameter> Build()
                 {
                     return _mySqlParameters;
                 }
-            }
-
-
+        }
  
 
         [HttpGet]
