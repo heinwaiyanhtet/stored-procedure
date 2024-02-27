@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/hein/Desktop/store-procedure/unit-test/unit-test.csproj": {}
+    "/home/hein/Desktop/store-procedure/Store-Procedure.Api.Tests/unit-test.csproj": {}
   },
   "projects": {
-    "/home/hein/Desktop/store-procedure/unit-test/unit-test.csproj": {
+    "/home/hein/Desktop/store-procedure/Store-Procedure.Api.Tests/unit-test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/hein/Desktop/store-procedure/unit-test/unit-test.csproj",
+        "projectUniqueName": "/home/hein/Desktop/store-procedure/Store-Procedure.Api.Tests/unit-test.csproj",
         "projectName": "unit-test",
-        "projectPath": "/home/hein/Desktop/store-procedure/unit-test/unit-test.csproj",
+        "projectPath": "/home/hein/Desktop/store-procedure/Store-Procedure.Api.Tests/unit-test.csproj",
         "packagesPath": "/home/hein/.nuget/packages/",
-        "outputPath": "/home/hein/Desktop/store-procedure/unit-test/obj/",
+        "outputPath": "/home/hein/Desktop/store-procedure/Store-Procedure.Api.Tests/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/hein/.nuget/NuGet/NuGet.Config"
@@ -25,7 +25,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "/home/hein/Desktop/store-procedure/Store-Procedure.Api/store-procedure.csproj": {
+                "projectPath": "/home/hein/Desktop/store-procedure/Store-Procedure.Api/store-procedure.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -71,6 +75,90 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.419/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/hein/Desktop/store-procedure/Store-Procedure.Api/store-procedure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/hein/Desktop/store-procedure/Store-Procedure.Api/store-procedure.csproj",
+        "projectName": "store-procedure",
+        "projectPath": "/home/hein/Desktop/store-procedure/Store-Procedure.Api/store-procedure.csproj",
+        "packagesPath": "/home/hein/.nuget/packages/",
+        "outputPath": "/home/hein/Desktop/store-procedure/Store-Procedure.Api/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/hein/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.1.28, )"
+            },
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.4.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "MySql.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.5.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

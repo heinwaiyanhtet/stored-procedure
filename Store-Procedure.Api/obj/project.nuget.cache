@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RU1svKin/6aQwzyuY1EEPb9HCioN+gxkGiCJyXd1hGHVgEXFEQXh8FDNp/glOFZ2Dbc5JrJ0THUB+ehJHTmKtQ==",
+  "dgSpecHash": "Kq3PF2rey9pkNc4r4nFbaImAVAj0VbgQg5bcXtIElNfkK5WY+m4RDu9bhv/XG3krmL0s/Llj29/FIAqjKoIvPw==",
   "success": true,
-  "projectFilePath": "/home/hein/Desktop/store-procedure/project/store-procedure.csproj",
+  "projectFilePath": "/home/hein/Desktop/store-procedure/Store-Procedure.Api/store-procedure.csproj",
   "expectedPackageFiles": [
     "/home/hein/.nuget/packages/bouncycastle.cryptography/2.2.1/bouncycastle.cryptography.2.2.1.nupkg.sha512",
     "/home/hein/.nuget/packages/dapper/2.1.28/dapper.2.1.28.nupkg.sha512",

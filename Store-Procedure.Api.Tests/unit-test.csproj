@@ -23,7 +23,7 @@
   </ItemGroup>
 
    <ItemGroup>
-    <ProjectReference Include="..\Store-Procedure.Api\store-procedure.sln" />
+    <ProjectReference Include="..\Store-Procedure.Api\store-procedure.csproj" />
   </ItemGroup>
 
 </Project>

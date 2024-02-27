@@ -3555,11 +3555,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/hein/Desktop/store-procedure/project/store-procedure.csproj",
+      "projectUniqueName": "/home/hein/Desktop/store-procedure/Store-Procedure.Api/store-procedure.csproj",
       "projectName": "store-procedure",
-      "projectPath": "/home/hein/Desktop/store-procedure/project/store-procedure.csproj",
+      "projectPath": "/home/hein/Desktop/store-procedure/Store-Procedure.Api/store-procedure.csproj",
       "packagesPath": "/home/hein/.nuget/packages/",
-      "outputPath": "/home/hein/Desktop/store-procedure/project/obj/",
+      "outputPath": "/home/hein/Desktop/store-procedure/Store-Procedure.Api/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/hein/.nuget/NuGet/NuGet.Config"
