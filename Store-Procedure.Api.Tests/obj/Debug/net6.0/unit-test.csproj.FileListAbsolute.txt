@@ -43,7 +43,6 @@
 /home/hein/Desktop/store-procedure/Store-Procedure.Api.Tests/bin/Debug/net6.0/MySql.Data.dll
 /home/hein/Desktop/store-procedure/Store-Procedure.Api.Tests/bin/Debug/net6.0/MySql.EntityFrameworkCore.dll
 /home/hein/Desktop/store-procedure/Store-Procedure.Api.Tests/bin/Debug/net6.0/Newtonsoft.Json.dll
-/home/hein/Desktop/store-procedure/Store-Procedure.Api.Tests/bin/Debug/net6.0/NuGet.Frameworks.dll
 /home/hein/Desktop/store-procedure/Store-Procedure.Api.Tests/bin/Debug/net6.0/Swashbuckle.AspNetCore.Swagger.dll
 /home/hein/Desktop/store-procedure/Store-Procedure.Api.Tests/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerGen.dll
 /home/hein/Desktop/store-procedure/Store-Procedure.Api.Tests/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -152,3 +151,6 @@
 /home/hein/Desktop/store-procedure/Store-Procedure.Api.Tests/obj/Debug/net6.0/unit-test.pdb
 /home/hein/Desktop/store-procedure/Store-Procedure.Api.Tests/obj/Debug/net6.0/unit-test.genruntimeconfig.cache
 /home/hein/Desktop/store-procedure/Store-Procedure.Api.Tests/obj/Debug/net6.0/ref/unit-test.dll
+/home/hein/Desktop/store-procedure/Store-Procedure.Api.Tests/bin/Debug/net6.0/Castle.Core.dll
+/home/hein/Desktop/store-procedure/Store-Procedure.Api.Tests/bin/Debug/net6.0/Moq.dll
+/home/hein/Desktop/store-procedure/Store-Procedure.Api.Tests/bin/Debug/net6.0/.msCoverageSourceRootsMapping_unit-test

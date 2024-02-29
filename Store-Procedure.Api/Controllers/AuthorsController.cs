@@ -6,6 +6,8 @@ using MySql.Data.MySqlClient;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using store_procedure.Models;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+
 namespace store_procedure.Controllers;
 
 [Route("api/[controller]")]
@@ -64,7 +66,7 @@ public class AuthorController : ControllerBase
                     _mySqlParameters[3].Value = bio;
                     return this;
                 }
-               
+                
                 public MysqlParameterBuilder CreatedAt(DateTime? dateTime){
                     _mySqlParameters[4].Value = dateTime;
                     return this;
@@ -79,11 +81,12 @@ public class AuthorController : ControllerBase
                     _mySqlParameters[6].Value = type;
                     return this;
                 }
-           
+            
                 public List<MySqlParameter> Build()
                 {
                     return _mySqlParameters;
                 }
+
         }
  
 
@@ -210,6 +213,7 @@ public class AuthorController : ControllerBase
             }
             return null;
         }
+
 
         private async Task<DataTable> GetDataTableFromSP(string storedProcedure, List<MySqlParameter>? sqlParameters = null)
         {
